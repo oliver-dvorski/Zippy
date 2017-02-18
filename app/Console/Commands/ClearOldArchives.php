@@ -42,7 +42,7 @@ class ClearOldArchives extends Command
     {
         Artisan::call('down');
         $this->info('Maintenance mode enabled');
-        $archives = Archive::where('updated_at', '<', \Carbon\Carbon::now()->subSecond())->get();
+        $archives = Archive::where('created_at', '<', \Carbon\Carbon::now()->subWeek())->get();
         $this->info('Found ' . count($archives) . ' database records');
         foreach ($archives as $archive) {
             File::delete(public_path('archives/' . $archive->filename));
