@@ -16,6 +16,4 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::post('/upload', function () {
-    return response('WIP', 200);
-});
+Route::post('/upload', 'FileController@upload');

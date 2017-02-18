@@ -11,7 +11,7 @@
     </head>
     <body>
 
-        <div class="page-content">
+        <div id="app">
             @yield('content')
         </div>
 
@@ -26,7 +26,7 @@
                             <i class="fa fa-github"></i>
                         </a>
 
-                        <a href="https://facebook.com/oliver.dvorski" target="_blank" class="icon">
+                        <a href="https://www.facebook.com/oliver.dvorski" target="_blank" class="icon">
                             <i class="fa fa-facebook"></i>
                         </a>
 
@@ -34,7 +34,7 @@
                             <i class="fa fa-twitter"></i>
                         </a>
 
-                        <a href="" target="_blank" class="icon">
+                        <a href="https://plus.google.com/+OliverDvorski" target="_blank" class="icon">
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </p>
@@ -44,5 +44,7 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
         <script src="{{ url('/js/app.js') }}"></script>
+
+        @yield('scripts')
     </body>
 </html>
