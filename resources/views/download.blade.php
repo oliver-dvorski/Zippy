@@ -10,7 +10,7 @@
 
     <div class="container">
         <div class="column is-half is-offset-one-quarter">
-            <div class="box has-text-centered">
+            <div class="section has-text-centered">
                 <div id="qrcode"></div>
 
                 <a href="{{ url('/' . $url . '/download') }}" class="button is-medium is-primary">

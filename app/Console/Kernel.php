@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\ClearUploads::class,
+        Commands\ClearOldArchives::class,
     ];
 
     /**
@@ -28,6 +29,7 @@ class Kernel extends ConsoleKernel
         //          ->hourly();
 
         $schedule->command('clear:uploads')->daily();
+        $schedule->command('clear:archives')->daily();
     }
 
     /**
