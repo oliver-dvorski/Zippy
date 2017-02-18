@@ -21,7 +21,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            Goat
+                            <a href="{{ url('/') }}">Goat</a>
                         </h1>
                         <h2 class="subtitle">
                             A thing by <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>
