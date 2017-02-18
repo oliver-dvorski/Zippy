@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="{{ url('/css/app.css') }}">
         <title>{{ config('app.name') }}</title>
 
+        <meta name="theme-color" content="#42afe3">
+
         <script>
             window.appUrl = <?php echo json_encode(env('APP_URL', 'http://localhost:8000')); ?>
         </script>
