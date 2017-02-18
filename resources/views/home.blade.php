@@ -8,7 +8,7 @@
                 <div class="box">
                     <form action="/upload" class="dropzone" id="that-zone">
                         <div class="dz-message needsclick">
-                            <h2>Drop files here or click to upload.</h2>
+                            <h2>Drop files here or click to upload</h2>
                             <br>
                             <span class="note needsclick">
                                 Max: 50Mb
