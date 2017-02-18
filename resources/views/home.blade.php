@@ -20,7 +20,7 @@
 
                 <div class="has-text-centered">
                     <a href="{{ url('/zip/' . Session::get('hash')) }}" class="button is-primary is-large">
-                        <span>Convert to zip</span>
+                        <span>Zip up</span>
                         <span class="icon is-small">
                             <i class="fa fa-file-archive-o"></i>
                         </span>

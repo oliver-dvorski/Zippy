@@ -23,7 +23,7 @@
                 <div class="hero-body">
                     <div class="container">
                         <h1 class="title">
-                            <a href="{{ url('/') }}">Goat</a>
+                            <a href="{{ url('/') }}">{{ config('app.name') }}</a>
                         </h1>
                         <h2 class="subtitle">
                             A thing by <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>
