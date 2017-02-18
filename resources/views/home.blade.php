@@ -1,16 +1,30 @@
-<!DOCTYPE html>
-<html lang="{{ config('app.locale') }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-        <link rel="stylesheet" href="{{ url('/css/app.css') }}">
-        <title>{{ config('app.name') }}</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>Hello</h1>
+@extends('layout')
+
+@section('content')
+
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Goat
+                </h1>
+                <h2 class="subtitle">
+                    A thing by <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>
+                </h2>
+            </div>
         </div>
-    </body>
-</html>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="box">
+                <form action="/upload" class="dropzone" id="my-awesome-dropzone">
+                    {{ csrf_field() }}
+                </form>
+            </div>
+        </div>
+    </section>
+
+    
+
+@stop
