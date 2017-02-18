@@ -25,7 +25,7 @@ class FileController extends Controller
         $files = storage_path('app/Uploaded_Files/' . $hash);
         
         if (File::exists($files)) {
-            Zipper::make('archives/' . $hash . '.zip')->add($files)->close();
+            Zipper::make(storage_path('app') . '/Archives/' . $hash . '.zip')->add($files)->close();
             File::deleteDirectory($files);
             $url = $this->generateUrl();
             
@@ -51,7 +51,7 @@ class FileController extends Controller
 
     public function download($url) {
         $file = Archive::where('url', $url)->firstOrFail();
-        return response()->download(public_path('archives/' . $file->filename));
+        return response()->download(storage_path('app/Archives/' . $file->filename));
     }
 
     protected function generateUrl($count = 4) {
