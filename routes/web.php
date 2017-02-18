@@ -12,5 +12,10 @@
 */
 
 Route::get('/', function () {
+    Session::put('hash', str_random(20));
     return view('home');
+});
+
+Route::post('/upload', function () {
+    return response('WIP', 200);
 });

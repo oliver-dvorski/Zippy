@@ -17,14 +17,18 @@
 
     <section class="section">
         <div class="container">
-            <div class="box">
-                <form action="/upload" class="dropzone" id="my-awesome-dropzone">
-                    {{ csrf_field() }}
-                </form>
+            <div class="column is-half is-offset-one-quarter">
+                <div class="box">
+                    <form action="/upload" class="dropzone" id="my-awesome-dropzone">
+                        {{ csrf_field() }}
+                    </form>
+                </div>
+
+                <div class="has-text-centered">
+                    <a href="#" class="button is-primary">Convert to zip</a>
+                </div>
             </div>
         </div>
     </section>
-
-    
 
 @stop
