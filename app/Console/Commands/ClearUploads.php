@@ -39,8 +39,6 @@ class ClearUploads extends Command
      */
     public function handle()
     {
-        Artisan::call('down');
         File::deleteDirectory(storage_path('app/Uploaded_Files'));
-        Artisan::call('up');
     }
 }

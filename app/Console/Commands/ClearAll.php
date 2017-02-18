@@ -2,26 +2,24 @@
 
 namespace App\Console\Commands;
 
-use File;
-use Artisan;
-use App\Archive;
 use Illuminate\Console\Command;
+use Artisan;
 
-class ClearOldArchives extends Command
+class ClearAll extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'clear:archives';
+    protected $signature = 'clear:all';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Delete archives that are older than a week';
+    protected $description = 'Cleaning the dirt outta the system';
 
     /**
      * Create a new command instance.
@@ -40,10 +38,13 @@ class ClearOldArchives extends Command
      */
     public function handle()
     {
-        $archives = Archive::where('created_at', '<', \Carbon\Carbon::now()->subWeek())->get();
-        foreach ($archives as $archive) {
-            File::delete(public_path('archives/' . $archive->filename));
-            $archive->delete();
-        }
+        $this->info('Entering maintenance mode');
+        Artisan::call('down');
+        $this->info('Deleting uploads');
+        Artisan::call('clear:uploads');
+        $this->info('Deleting old archives');
+        Artisan::call('clear:archives');
+        Artisan::call('up');
+        $this->info('All done.');
     }
 }
