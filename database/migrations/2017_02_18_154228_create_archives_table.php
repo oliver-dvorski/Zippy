@@ -15,8 +15,8 @@ class CreateArchivesTable extends Migration
     {
         Schema::create('archives', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('url')->unique();
-            $table->string('filename')->unique();
+            $table->string('url', 250)->unique();
+            $table->string('filename', 250)->unique();
             $table->timestamps();
         });
     }
