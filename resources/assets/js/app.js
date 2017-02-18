@@ -19,3 +19,7 @@ Vue.component('example', require('./components/Example.vue'));
 const app = new Vue({
     el: '#app'
 });
+
+if (!! document.getElementById('qrcode')) {
+    new QRCode(document.getElementById("qrcode"), window.appUrl + '/' + document.getElementById('fileUrl').innerHTML);
+}

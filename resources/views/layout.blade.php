@@ -8,10 +8,28 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ url('/css/app.css') }}">
         <title>{{ config('app.name') }}</title>
+
+        <script>
+            window.appUrl = <?php echo json_encode(env('APP_URL', 'http://localhost:8000')); ?>
+        </script>
+
     </head>
     <body>
 
-        <div id="app">
+        <div class="page-content" id="app">
+            <section class="hero is-primary">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title">
+                            Goat
+                        </h1>
+                        <h2 class="subtitle">
+                            A thing by <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>
+                        </h2>
+                    </div>
+                </div>
+            </section>
+
             @yield('content')
         </div>
 
@@ -42,9 +60,9 @@
             </div>
         </footer>
 
+        @yield('scripts')
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.3.0/min/dropzone.min.js"></script>
         <script src="{{ url('/js/app.js') }}"></script>
-
-        @yield('scripts')
     </body>
 </html>

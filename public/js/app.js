@@ -950,6 +950,10 @@ var app = new Vue({
   el: '#app'
 });
 
+if (!!document.getElementById('qrcode')) {
+  new QRCode(document.getElementById("qrcode"), window.appUrl + '/' + document.getElementById('fileUrl').innerHTML);
+}
+
 /***/ }),
 /* 9 */
 /***/ (function(module, exports) {
@@ -1829,7 +1833,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /***/ }),
 /* 29 */
 /***/ (function(module, exports, __webpack_require__) {
-
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
