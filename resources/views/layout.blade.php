@@ -6,7 +6,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         @include('partials.favicon')
-    
+
+        {{-- OpenGraph --}}
+        <meta property="og:site_name" content="{{ config('app.name') }}">
+        <meta property="og:description" content="Anonymous file sharing simplified">
+        <meta property="og:image" content="{{ url('splash.jpg') }}">
+        <meta property="og:url" content="{{ url('/') }}">
+        <meta property="og:type" content="website"/>
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ url('/css/app.css') }}">
         <title>{{ config('app.name') }}</title>
