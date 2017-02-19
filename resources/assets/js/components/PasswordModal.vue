@@ -1,5 +1,5 @@
 <template>
-    <transition name="fade">
+    <transition name="animate">
         <div class="modal is-active modal-background" @click="$emit('close')">
             <div class="columns is-mobile">
                 <div class="column is-8 is-offset-2 modal-card" @click.stop>
@@ -14,7 +14,7 @@
                     <footer class="modal-card-foot">
                         <form class="control is-fullwidth has-addons has-addons-centered" method="POST" :action="downloadRoute">
                             <input type="hidden" name="_token" :value="csrf_token">
-                            <input type="password" placeholder="Password" class="input is-large" :value="password" @keyup.enter="checkPassword">
+                            <input type="password" name="password" placeholder="Password" class="input is-large" @keyup.enter="checkPassword">
                             <button class="button is-primary is-large" :class="{ 'is-loading': loading }" @click="checkPassword">OK</button>
                         </form>
                     </footer>
@@ -29,7 +29,6 @@
     export default {
         data() {
             return {
-                password: '',
                 loading: false,
                 downloadRoute: window.appData.url + '/' + document.getElementById('fileUrl').innerHTML + '/download',
                 csrf_token: window.appData.csrf,

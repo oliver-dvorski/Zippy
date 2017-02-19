@@ -15,12 +15,14 @@ require('./dropzone');
  */
 
 Vue.component('password-modal', require('./components/PasswordModal.vue'));
+Vue.component('notification', require('./components/Notification.vue'));
 
 const app = new Vue({
     el: '#app',
     
     data: {
-        showPasswordModal: false
+        showPasswordModal: false,
+        showNotifcation: true
     }
 });
 

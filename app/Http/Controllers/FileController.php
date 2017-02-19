@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use File;
+use Hash;
 use Zipper;
 use Session;
 use App\Archive;
@@ -21,7 +22,7 @@ class FileController extends Controller
         return response('Upload failed (is your file too large?)', 500);
     }
 
-    public function zip($hash) {
+    public function zip($hash, Request $request) {
         $files = storage_path('app/Uploaded_Files/' . $hash);
         
         if (File::exists($files)) {
@@ -31,10 +32,11 @@ class FileController extends Controller
             
             Archive::create([
                 'url' => $url,
-                'filename' => $hash . '.zip'
+                'filename' => $hash . '.zip',
+                'password' => bcrypt($request->password)
             ]);
 
-            return redirect('/' . $url);
+            return redirect('/' . $url)->with('success', 'Archive created');
         }
 
         return redirect('/');
@@ -49,9 +51,13 @@ class FileController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
-    public function download($url) {
+    public function download($url, Request $request) {
         $file = Archive::where('url', $url)->firstOrFail();
-        return response()->download(storage_path('app/Archives/' . $file->filename));
+        if (Hash::check($request->password, $file->password)) {
+            return response()->download(storage_path('app/Archives/' . $file->filename));
+        }
+
+        return redirect()->back()->with('error', 'Invalid password');
     }
 
     protected function generateUrl($count = 4) {

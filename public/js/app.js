@@ -945,12 +945,14 @@ __webpack_require__(30);
  */
 
 Vue.component('password-modal', __webpack_require__(33));
+Vue.component('notification', __webpack_require__(50));
 
 var app = new Vue({
     el: '#app',
 
     data: {
-        showPasswordModal: false
+        showPasswordModal: false,
+        showNotifcation: true
     }
 });
 
@@ -1842,7 +1844,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = {
     data: function data() {
         return {
-            password: '',
             loading: false,
             downloadRoute: window.appData.url + '/' + document.getElementById('fileUrl').innerHTML + '/download',
             csrf_token: window.appData.csrf,
@@ -2016,7 +2017,7 @@ module.exports = function normalizeComponent (
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('transition', {
     attrs: {
-      "name": "fade"
+      "name": "animate"
     }
   }, [_c('div', {
     staticClass: "modal is-active modal-background",
@@ -2067,10 +2068,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "input is-large",
     attrs: {
       "type": "password",
+      "name": "password",
       "placeholder": "Password"
-    },
-    domProps: {
-      "value": _vm.password
     },
     on: {
       "keyup": function($event) {
@@ -10716,6 +10715,106 @@ module.exports = g;
 __webpack_require__(8);
 module.exports = __webpack_require__(9);
 
+
+/***/ }),
+/* 42 */,
+/* 43 */,
+/* 44 */,
+/* 45 */,
+/* 46 */,
+/* 47 */,
+/* 48 */,
+/* 49 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = {
+    props: ['type'],
+
+    mounted: function mounted() {
+        var _this = this;
+
+        setTimeout(function () {
+            _this.$emit('close');
+        }, 5000);
+    }
+};
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(34)(
+  /* script */
+  __webpack_require__(49),
+  /* template */
+  __webpack_require__(51),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/oliver/Documents/sites/zavrsni/resources/assets/js/components/Notification.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Notification.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-0a85e104", Component.options)
+  } else {
+    hotAPI.reload("data-v-0a85e104", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 51 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('transition', {
+    attrs: {
+      "name": "animate"
+    }
+  }, [_c('div', {
+    staticClass: "notification",
+    class: 'is-' + _vm.type
+  }, [_c('button', {
+    staticClass: "delete",
+    on: {
+      "click": function($event) {
+        _vm.$emit('close')
+      }
+    }
+  }), _vm._v(" "), _vm._t("default")], 2)])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-0a85e104", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);

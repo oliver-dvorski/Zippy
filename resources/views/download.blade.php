@@ -8,6 +8,7 @@
 
     <span style="display: none" id="fileUrl">{{ $url }}</span>
 
+
     <div class="container">
         <div class="column is-half is-offset-one-quarter">
             <div class="section has-text-centered">
@@ -34,5 +35,17 @@
     </div>
 
     <password-modal v-show="showPasswordModal" @close="showPasswordModal = false"></password-modal>
+
+    @if (Session::get('error'))
+        <notification @close="showNotifcation = false" v-show="showNotifcation" type="danger">
+            {{ Session::get('error') }}
+        </notification>
+    @endif
+
+    @if (Session::get('success'))
+        <notification @close="showNotifcation = false" v-show="showNotifcation" type="success">
+            {{ Session::get('success') }}
+        </notification>
+    @endif
 
 @stop

@@ -1,6 +1,6 @@
 // Colors
 $blue: #42afe3
-$red: #ff2a2e
+$red: #FF3860
 $primary: $blue
 
 // Fonts
@@ -25,3 +25,15 @@ $primary: $blue
 
 .is-fullwidth
     width: 100%
+
+.notification
+    position: fixed
+    right: 20px
+    bottom: 20px
+
+.animate-enter-active, .animate-leave-active
+    transition: opacity .3s, transform .3s
+
+.animate-enter, .animate-leave-to 
+    opacity: 0
+    transform: scale(1.1)
