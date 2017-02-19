@@ -9,6 +9,10 @@ $primary: $blue
 @import 'node_modules/bulma/bulma'
 @import 'node_modules/dropzone/src/dropzone'
 
+// Abstracted styles
+@import 'partials/bulma-fixes'
+@import 'partials/notifications'
+
 // Styles
 .page-content 
     min-height: calc(100vh - 182px)
@@ -22,29 +26,3 @@ $primary: $blue
 #logo
     height: 4em
     width: auto
-
-.is-fullwidth
-    width: 100%
-
-.notification
-    position: fixed
-    right: 20px
-    bottom: 20px
-
-.animate-enter-active, .animate-leave-active
-    transition: opacity .3s, transform .3s
-
-.animate-enter, .animate-leave-to 
-    opacity: 0
-    transform: scale(1.1)
-
-@media (max-width: 425px)
-    .home .password-conrol
-        flex-direction: column
-        
-        .input
-            border-radius: 3px 3px 0 0 !important
-        
-        .button
-            width: 100%
-            border-radius: 0 0 3px 3px !important

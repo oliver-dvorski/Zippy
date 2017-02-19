@@ -13,7 +13,7 @@ class FileController extends Controller
 {
     public function upload(Request $request) {
         if ($request->hasFile('file')) {
-            $filename = time() . str_random(3) . '.' . $request->file->extension();
+            $filename = time() . ' - ' . $request->file->getClientOriginalName();
             
             $request->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
 
