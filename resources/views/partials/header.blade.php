@@ -1,4 +1,4 @@
-<section class="hero is-primary">
+<section class="hero {{ $theme }}">
     <div class="hero-body">
         <div class="container">
             <div class="columns is-mobile">
@@ -12,7 +12,7 @@
                         </a>
                     </h1>
                     <h2 class="subtitle">
-                        {!! $subtitle = 'A thing by <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>' !!}
+                        {!! $subtitle !!}
                     </h2>
                 </div>
             </div>
