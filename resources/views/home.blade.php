@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <section class="section">
+    <section class="section home">
         <div class="container">
             <div class="column is-half is-offset-one-quarter">
                 <div class="box">
@@ -21,7 +21,7 @@
                 <form action="{{ url('/zip/' . Session::get('hash')) }}" method="POST">
                     {{ csrf_field() }}
 
-                    <div class="control has-addons">
+                    <div class="control password-conrol is-grouped has-addons">
                         <input type="password" name="password" class="input is-large is-expanded" placeholder="Password">
                         
                         <div class="has-text-centered">
