@@ -11,12 +11,24 @@
 
 <script>
     export default {
-        props: ['type'],
+        props: {
+            type: {
+                default: '',
+                required: false,
+                type: String
+            },
+            timer: {
+                default: 5,
+                required: false,
+            }
+        },
 
         mounted() {
-            setTimeout(() => {
-                this.$emit('close')
-            }, 5000)
+            if (this.timer) {
+                setTimeout(() => {
+                    this.$emit('close')
+                }, 5000)
+            }
         }
     }
 </script>
