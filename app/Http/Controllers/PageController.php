@@ -21,6 +21,7 @@ class PageController extends Controller
 
     public function about() {
         $markdown = $this->converter->convertToHtml(file_get_contents(base_path() . '/readme.md'));
-        return view("about", compact('markdown'));
+        $theme = '#383838';
+        return view("about", compact('markdown', 'theme'));
     }
 }

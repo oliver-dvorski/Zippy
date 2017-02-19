@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="{{ url('/css/app.css') }}">
         <title>{{ config('app.name') }}</title>
 
-        <meta name="theme-color" content="#42afe3">
+        <meta name="theme-color" content="{{ isset($theme) ? $theme : '#42afe3' }}">
 
         <script>
             window.appData = {
