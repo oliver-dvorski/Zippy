@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Archive extends Model
 {
-    protected $fillable = ['url', 'filename'];
+    protected $hidden = ['password'];
+    protected $fillable = ['url', 'filename', 'password'];
 }

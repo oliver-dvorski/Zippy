@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Route::get('/{url}', 'FileController@downloadPage');
 Route::get('/{url}/download', 'FileController@download');
+Route::post('/{url}/download', 'FileController@download');
 
 Route::post('/zip/{hash}', 'FileController@zip');
 

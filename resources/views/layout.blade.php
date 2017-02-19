@@ -14,7 +14,10 @@
         <meta name="theme-color" content="#42afe3">
 
         <script>
-            window.appUrl = <?php echo json_encode(env('APP_URL', 'http://localhost:8000')); ?>
+            window.appData = {
+                url: <?php echo json_encode(env('APP_URL', 'http://localhost:8000')); ?>,
+                csrf: <?php echo json_encode(csrf_token()); ?>
+            }
         </script>
 
     </head>

@@ -25,5 +25,5 @@ const app = new Vue({
 });
 
 if (!! document.getElementById('qrcode')) {
-    new QRCode(document.getElementById("qrcode"), window.appUrl + '/' + document.getElementById('fileUrl').innerHTML);
+    new QRCode(document.getElementById("qrcode"), window.appData.url + '/' + document.getElementById('fileUrl').innerHTML);
 }
