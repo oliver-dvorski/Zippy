@@ -10,4 +10,4 @@ Once you've cloned the repo and installed [Laravel](https://www.laravel.com/docs
 composer install
 npm install
 ```
-You'll also need to configure your database and input the credentials into the .env file (just a reminder that the .env.example file is here for reference). Once you've got that covered, you just run ```php artisan migrate``` to set up the db and ```php artisan serve``` to run the server.
+You'll also need to configure your database and input the credentials into the .env file (just a reminder that the .env.example file is here for reference). Once you've got that covered, you just run ```php artisan key:generate``` to generate your application key and ```php artisan migrate``` to set up the db and ```php artisan serve``` to run the server.

@@ -1,7 +1,9 @@
 @extends('layout')
 
 @section('content')
-
+    @component('partials.header')
+    @endcomponent
+            
     <section class="section home">
         <div class="container">
             <div class="column is-half is-offset-one-quarter">

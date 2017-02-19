@@ -5,10 +5,10 @@
 @stop
 
 @section('content')
-
+    @component('partials.header')
+    @endcomponent
+    
     <span style="display: none" id="fileUrl">{{ $url }}</span>
-
-
     <div class="container">
         <div class="column is-half is-offset-one-quarter">
             <div class="section has-text-centered">
