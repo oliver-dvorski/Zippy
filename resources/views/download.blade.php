@@ -16,7 +16,9 @@
 
 
                 <a href="{{ url('/' . $url . '/download') }}" class="button is-medium is-primary"
-                    @click.prevent="showPasswordModal = true"
+                    @if ($hasPassword)
+                        @click.prevent="showPasswordModal = true"
+                    @endif
                 >
                     <span class="icon is-small">
                         <span class="fa fa-download"></span>
@@ -33,8 +35,10 @@
             </div>
         </div>
     </div>
-
-    <password-modal v-show="showPasswordModal" @close="showPasswordModal = false"></password-modal>
+    
+    @if ($hasPassword)
+        <password-modal v-show="showPasswordModal" @close="showPasswordModal = false"></password-modal>
+    @endif
 
     @if (Session::get('error'))
         <notification @close="showNotifcation = false" v-show="showNotifcation" type="danger">

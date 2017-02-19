@@ -29,11 +29,12 @@ class FileController extends Controller
             Zipper::make(storage_path('app') . '/Archives/' . $hash . '.zip')->add($files)->close();
             File::deleteDirectory($files);
             $url = $this->generateUrl();
+            $password = $request->password == '' ? '' : bcrypt($request->password);
             
             Archive::create([
                 'url' => $url,
                 'filename' => $hash . '.zip',
-                'password' => bcrypt($request->password)
+                'password' => $password
             ]);
 
             return redirect('/' . $url)->with('success', 'Archive created');
@@ -44,8 +45,9 @@ class FileController extends Controller
 
     public function downloadPage($url) {
         $file = Archive::where('url', $url)->first();
+        $hasPassword = $file->password != '' ? true : false;
         if ($file) {
-            return view('download', compact('url'));
+            return view('download', compact('url', 'hasPassword'));
         }
 
         return response()->view('errors.404', [], 404);
@@ -53,7 +55,7 @@ class FileController extends Controller
 
     public function download($url, Request $request) {
         $file = Archive::where('url', $url)->firstOrFail();
-        if (Hash::check($request->password, $file->password)) {
+        if ($file->password == '' || Hash::check($request->password, $file->password)) {
             return response()->download(storage_path('app/Archives/' . $file->filename));
         }
 
