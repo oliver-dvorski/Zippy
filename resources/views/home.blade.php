@@ -18,14 +18,23 @@
                     </form>
                 </div>
 
-                <div class="has-text-centered">
-                    <a href="{{ url('/zip/' . Session::get('hash')) }}" class="button is-primary is-large">
-                        <span>Zip up</span>
-                        <span class="icon is-small">
-                            <i class="fa fa-file-archive-o"></i>
-                        </span>
-                    </a>
-                </div>
+                <form action="{{ url('/zip/' . Session::get('hash')) }}" method="POST">
+                    {{ csrf_field() }}
+
+                    <div class="control has-addons">
+                        <input type="password" name="password" class="input is-large is-expanded" placeholder="Password">
+                        
+                        <div class="has-text-centered">
+                            <button type="submit" class="button is-primary is-large">
+                                <span>Zip up</span>
+                                <span class="icon is-small">
+                                    <i class="fa fa-file-archive-o"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
             </div>
         </div>
     </section>

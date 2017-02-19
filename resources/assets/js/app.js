@@ -14,10 +14,14 @@ require('./dropzone');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('password-modal', require('./components/PasswordModal.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    
+    data: {
+        showPasswordModal: false
+    }
 });
 
 if (!! document.getElementById('qrcode')) {

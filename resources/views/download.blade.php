@@ -13,7 +13,10 @@
             <div class="section has-text-centered">
                 <div id="qrcode"></div>
 
-                <a href="{{ url('/' . $url . '/download') }}" class="button is-medium is-primary">
+
+                <a href="{{ url('/' . $url . '/download') }}" class="button is-medium is-primary"
+                    @click.prevent="showPasswordModal = true"
+                >
                     <span class="icon is-small">
                         <span class="fa fa-download"></span>
                     </span>
@@ -29,5 +32,7 @@
             </div>
         </div>
     </div>
+
+    <password-modal v-show="showPasswordModal" @close="showPasswordModal = false"></password-modal>
 
 @stop
