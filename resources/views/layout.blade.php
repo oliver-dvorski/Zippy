@@ -56,6 +56,11 @@
                         &copy; {{ date('Y') }} <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>
                     </p>
                     <p>
+                        Released under the
+                        <a href="https://opensource.org/licenses/mit-license.php" target="_blank">MIT</a>
+                        license
+                    </p>
+                    <p>
                         <a href="https://github.com/Musmula" target="_blank" class="icon">
                             <i class="fa fa-github"></i>
                         </a>
