@@ -26,19 +26,18 @@
                     </form>
                 </div>
 
-                <form action="{{ url('/zip/' . Session::get('hash')) }}" method="POST">
+                <form action="{{ url('/zip/' . Session::get('hash')) }}" method="POST" id="form">
                     {{ csrf_field() }}
 
                     <div class="control password-conrol is-grouped has-addons">
                         <input type="password" name="password" class="input is-large is-expanded" placeholder="Password">
                         
-                        <div class="has-text-centered">
-                            <button type="submit" class="button is-primary is-large">
-                                <span>Zip up</span>
-                                <span class="icon is-small">
-                                    <i class="fa fa-file-archive-o"></i>
-                                </span>
-                            </button>
+                        {{-- Firefox is a bit wee so we can't use damn buttons with icons --}}
+                        <div class="button is-primary is-large" onclick="document.querySelector('#form').submit()">
+                            <span>Zip up</span>
+                            <span class="icon is-small">
+                                <i class="fa fa-file-archive-o"></i>
+                            </span>
                         </div>
                     </div>
                 </form>
