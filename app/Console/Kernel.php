@@ -29,7 +29,7 @@ class Kernel extends ConsoleKernel
         // $schedule->command('inspire')
         //          ->hourly();
 
-        $schedule->command('clear:all')->dailyAt('11:00');
+        $schedule->command('clear:all')->dailyAt('4:00');
     }
 
     /**
