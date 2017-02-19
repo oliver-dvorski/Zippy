@@ -45,6 +45,9 @@ class FileController extends Controller
 
     public function downloadPage($url) {
         $file = Archive::where('url', $url)->first();
+        if (!$file) {
+            return view("errors.404");
+        }
         $hasPassword = $file->password != '' ? true : false;
         if ($file) {
             return view('download', compact('url', 'hasPassword'));

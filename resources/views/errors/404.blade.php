@@ -2,7 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>{{ config('app.name') }} - 404</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link href="https://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet">
     <style>
         * {
@@ -30,11 +32,13 @@
             width: 700px;
             max-width: 100%;
             margin: 0 auto;
+            padding: 20px;
         }
 
         h1 {
             font-weight: 100;
-            font-size: 4em;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
 
         hr {
@@ -43,13 +47,19 @@
             margin: 40px 0;
         }
 
+        iframe {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
     </style>
 </head>
 <body>
     <div class="flex">
-        <h1>404</h1>
+        <h1>Error: 404</h1>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Sagg08DrO5U" frameborder="0" allowfullscreen></iframe>
         <hr>
-        <p>Archive not found</p>
+        <p>Enjoy the music and try reloading the page once the video ends</p>
     </div>
 </body>
 </html>
