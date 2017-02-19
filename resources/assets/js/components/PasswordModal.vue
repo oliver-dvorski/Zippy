@@ -14,7 +14,7 @@
                     <footer class="modal-card-foot">
                         <form class="control is-fullwidth has-addons has-addons-centered" method="POST" :action="downloadRoute">
                             <input type="hidden" name="_token" :value="csrf_token">
-                            <input type="password" name="password" placeholder="Password" class="input is-large" @keyup.enter="checkPassword">
+                            <input type="password" name="password" placeholder="Password" id="password" class="input is-large" @keyup.enter="checkPassword">
                             <button class="button is-primary is-large" :class="{ 'is-loading': loading }" @click="checkPassword">OK</button>
                         </form>
                     </footer>
@@ -46,11 +46,15 @@
         },
 
         methods: {
+            clearPassword() {
+                document.getElementById('password').value = ''
+            },
+
             checkPassword() {
                 this.loading = true
                 setTimeout(() => {
                     this.loading = false
-                    this.password = ''
+                    this.clearPassword()
                 }, 1000)
             }
         }
