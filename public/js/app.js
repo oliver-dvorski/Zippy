@@ -2048,7 +2048,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   })]), _vm._v(" "), _c('section', {
     staticClass: "modal-card-body"
-  }, [_vm._v("\n                    This file is password protected, please insert your password in the field below to download the file\n                ")]), _vm._v(" "), _c('footer', {
+  }, [_vm._v("\n                    This file is password protected, please input your password in the field below to download the file\n                ")]), _vm._v(" "), _c('footer', {
     staticClass: "modal-card-foot"
   }, [_c('form', {
     staticClass: "control is-fullwidth has-addons has-addons-centered",

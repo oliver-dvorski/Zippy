@@ -8,7 +8,7 @@
                         <button class="delete" @click="$emit('close')"></button>
                     </header>
                     <section class="modal-card-body">
-                        This file is password protected, please insert your password in the field below to download the file
+                        This file is password protected, please input your password in the field below to download the file
                     </section>
                     
                     <footer class="modal-card-foot">
