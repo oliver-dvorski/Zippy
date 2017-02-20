@@ -5,14 +5,7 @@
 @stop
 
 @section('content')
-    @component('partials.header')
-        @slot('theme')
-            is-primary
-        @endslot
-        @slot('subtitle')
-            A thing by <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>
-        @endslot
-    @endcomponent
+    @include('partials.standardHeader')
         
     <span style="display: none" id="fileUrl">{{ $url }}</span>
     <div class="container">

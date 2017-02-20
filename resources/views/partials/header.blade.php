@@ -12,7 +12,7 @@
                         </a>
                     </h1>
                     <h2 class="subtitle">
-                        {!! $subtitle !!}
+                        {{ $subtitle }}
                     </h2>
                 </div>
             </div>
