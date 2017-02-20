@@ -1,4 +1,4 @@
-<section class="hero {{ $theme }}">
+<section class="hero {{ $theme }} is-bold">
     <div class="hero-body">
         <div class="container">
             <div class="columns is-mobile">
