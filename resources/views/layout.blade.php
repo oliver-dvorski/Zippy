@@ -62,6 +62,17 @@
                             <i class="fa fa-google-plus"></i>
                         </a>
                     </p>
+                    <p>
+                        Wanna buy the dev a cuppa coffee?
+                    </p>
+                    <p>
+                        <a href="https://www.paypal.me/OliverDvorski" class="button" target="_blank">
+                            <span class="icon is-small">
+                                <i class="fa fa-paypal"></i>
+                            </span>
+                            <span>PayPal.Me</span>
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
