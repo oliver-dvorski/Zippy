@@ -4,14 +4,20 @@ When you drop your files into the dropzone on the homepage, they’re uploaded t
 ## But why?
 I created Zippy because it solves a specific problem I had in school. The computers in my school have poor security implementations and all of them are compromised with malware. When a task required me to use one of those computers, I needed a way to transfer my work from them without connecting them in any way with my personal devices or using them to write out sensitive information (becasuse most of them are infected with keyloggers). So the solution is to upload the results of my work to Zippy, scan the QR code with my phone and submit it or the zip file to my teacher.
 ## Development
-Zippy is on Github and I’m open to suggestions and pull requests. Don’t be shy if you have an idea or even better: the execution of your idea in a fork.
+Zippy is on GitHub and I’m open to suggestions and pull requests. Don’t be shy if you have an idea or even better: the execution of your idea in a fork.
 ### Installation
 Once you've cloned the repo and installed [Laravel](https://www.laravel.com/docs), run
 ```bash
 composer install
 npm install
 ```
-You'll also need to configure your database and input the credentials into the .env file (just a reminder that the .env.example file is here for reference). Once you've got that covered, you just run ```php artisan key:generate``` to generate your application key and ```php artisan migrate``` to set up the db and ```php artisan serve``` to run the server.
+You'll also need to configure your database and input the credentials into the .env file (just a reminder that the .env.example file is here for reference). Once you've got that covered, you just run
+```
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
+And you should have a running instance of Zippy at localhost:8000
 ### House cleaning artisan commands
 Zippy includes 3 custom commands. One for deleting old archives and db records, one for clearing the uploads folder and one that wrapps them together between maintenance toggles.
 ```
