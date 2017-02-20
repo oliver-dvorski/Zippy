@@ -7,8 +7,8 @@
     <div class="container">
         <div class="column is-half is-offset-one-quarter">
             <div class="section has-text-centered">
-                <div id="qrcode"></div>
-
+                <canvas id="qrcode"></canvas>
+                <br>
                 <a href="{{ url('/' . $url . '/download') }}" class="button is-medium is-primary"
                     @if ($hasPassword)
                         @click.prevent="showPasswordModal = true"

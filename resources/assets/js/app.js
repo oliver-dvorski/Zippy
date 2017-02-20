@@ -27,5 +27,9 @@ const app = new Vue({
 });
 
 if (!! document.getElementById('qrcode')) {
-    new QRCode(document.getElementById("qrcode"), window.appData.url + '/' + document.getElementById('fileUrl').innerHTML);
+    new QRious({
+        element: document.getElementById('qrcode'),
+        value: window.appData.url + '/' + document.getElementById('fileUrl').innerHTML,
+        size: 240,
+    })
 }
