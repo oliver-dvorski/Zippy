@@ -1,9 +1,5 @@
 @extends('layout')
 
-@section('scripts')
-    <script src="{{ url('/js/qrcode.js') }}"></script>
-@stop
-
 @section('content')
     @include('partials.standardHeader')
         

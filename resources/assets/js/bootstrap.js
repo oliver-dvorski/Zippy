@@ -1,4 +1,5 @@
 window.Dropzone = require('./lib/dropzone')
+require('./lib/qrcode')
 
 /**
  * Vue is a modern JavaScript library for building interactive web interfaces
