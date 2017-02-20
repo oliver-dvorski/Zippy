@@ -13,7 +13,6 @@
         <meta property="og:description" content="Anonymous file sharing simplified">
         <meta property="og:image" content="{{ url('splash.jpg') }}">
         <meta property="og:url" content="{{ url('/') }}">
-        <meta property="og:type" content="website"/>
         <meta property="fb:app_id" content="{{ env('APP_ID') }}">
 
         <link rel="stylesheet" href="{{ url('/css/app.css') }}">
