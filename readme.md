@@ -1,6 +1,8 @@
-Zippy is a file sharing platform designed to transfer files from one computer to another without the transfer of any sensitive information such as usernames and passwords. 
+Zippy is a file sharing platform designed to transfer files from one computer to another without the transfer of any sensitive information such as usernames and passwords.
 ## Process
 When you drop your files into the dropzone on the homepage, they’re uploaded through asynchronous POST requests protected with a CSRF token and SSL. They’re then temporarily stored on a server in Frankfurt, waiting for you to confirm that you’re done uploading and ready to zip them up. Once you do that, a zip archive spawns on the server containing your files. The originals are deleted at that moment. If you upload files without zipping them, they’ll stay on the server for a day, unaccessible to the public, you won’t be able to recover them.
+## But why?
+I created Zippy because it solves a specific problem I had in school. The computers in my school have poor security implementations and all of them are compromised with malware. When a task required me to use one of those computers, I needed a way to transfer my work from them without connecting them in any way with my personal devices or using them to write out sensitive information (becasuse most of them are infected with keyloggers). So the solution is to upload the results of my work to Zippy, scan the QR code with my phone and submit it or the zip file to my teacher.
 ## Development
 Zippy is on Github and I’m open to suggestions and pull requests. Don’t be shy if you have an idea or even better: the execution of your idea in a fork.
 ### Installation
