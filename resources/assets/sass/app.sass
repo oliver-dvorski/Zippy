@@ -4,8 +4,6 @@ $red: #FF3860
 $dark: #383838
 $primary: $blue
 
-// Fonts
-
 // Dependencies
 @import './lib/dropzone'
 @import 'node_modules/bulma/bulma'
@@ -13,29 +11,11 @@ $primary: $blue
 
 // Abstracted styles
 @import 'partials/bulma-fixes'
+@import 'partials/layout-tweaks'
 @import 'partials/notifications'
 @import 'partials/animation'
 
-// Styles
-.page-content 
-    min-height: calc(100vh - 182px)
-
+// Dropzone tweaks
 .dropzone 
     border: none
     text-align: center
-
-#qrcode img 
-    margin: 20px auto 40px auto
-
-#logo
-    height: 4em
-    width: auto
-    
-pre code 
-    margin-bottom: 1em
-
-.modal-card
-    overflow: auto
-
-input
-    min-width: 0
