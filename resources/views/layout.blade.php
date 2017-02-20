@@ -8,7 +8,6 @@
         @include('partials.favicon')
 
         {{-- OpenGraph --}}
-        <meta property="og:site_name" content="{{ config('app.name') }}">
         <meta property="og:title" content="{{ config('app.name') }}">
         <meta property="og:description" content="Anonymous file sharing simplified">
         <meta property="og:image" content="{{ url('splash.jpg') }}">
