@@ -27,3 +27,13 @@ php artisan clear:all
 ```
 If the .env file says that the app is in production, only archives older than a week will be deleted but if you're in a local environment, everything gets dropped.
 The scheduler calls ```clear:all``` daily at 4, but in order to make use of that you need to either configure cron jobs or set up scheduling in Laravel Forge.
+### Basic Google Analytics integration
+I've added a conditional partial to the layout file that gets loaded if you set a ```GA``` key in the .env file, like
+```
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+APP_ID=123456789123456
+GA=UA-12345678-9
+```

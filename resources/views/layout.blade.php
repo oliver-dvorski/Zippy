@@ -79,5 +79,9 @@
         @yield('scripts')
 
         <script src="{{ url('/js/app.js') }}"></script>
+
+        @if (env('GA') !== null)
+            @include('partials.googleAnalytics')
+        @endif
     </body>
 </html>
