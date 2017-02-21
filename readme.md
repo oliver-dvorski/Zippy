@@ -19,11 +19,11 @@ php artisan serve
 ```
 And you should have a running instance of Zippy at localhost:8000
 ### House cleaning artisan commands
-Zippy includes 3 custom commands. One for deleting old archives and db records, one for clearing the uploads folder and one that wrapps them together between maintenance toggles.
+Zippy includes 3 custom commands. One for deleting old archives and db records, one for clearing the uploads folder and one that wrapps the other two together and calls them between maintenance toggles.
 ```
 php artisan clear:archives
 php artisan clear:uploads
 php artisan clear:all
 ```
 If the .env file says that the app is in production, only archives older than a week will be deleted but if you're in a local environment, everything gets dropped.
-The schduler calls ```clear:all``` daily at 4, but in order to make use of that you need to either configure cron jobs or set up scheduling in Laravel Forge.
+The scheduler calls ```clear:all``` daily at 4, but in order to make use of that you need to either configure cron jobs or set up scheduling in Laravel Forge.
