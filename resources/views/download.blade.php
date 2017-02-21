@@ -7,9 +7,10 @@
     <div class="container">
         <div class="column is-half is-offset-one-quarter">
             <div class="section has-text-centered">
+                <h1 class="title">Your archive is ready!</h1>
                 <canvas id="qrcode"></canvas>
                 <br>
-                <p>Link to your archive: <a href="{{ url($url) }}">{{ url($url) }}</a></p>
+                <p>Direct link: <a href="{{ url($url) }}">{{ url($url) }}</a></p>
                 <br>
                 <a href="{{ url('/' . $url . '/download') }}" class="button is-medium is-primary"
                     @if ($hasPassword)
