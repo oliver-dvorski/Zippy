@@ -26,7 +26,7 @@
                         <input type="password" name="password" class="input is-large is-expanded" placeholder="Password (optional)">
                         
                         {{-- Firefox is a bit wee so we can't use damn buttons with icons, instead we have to use something else like a div --}}
-                        <div class="button is-primary is-large" onclick="document.querySelector('#form').submit()">
+                        <div class="button is-primary is-large" onclick="document.querySelector('#form').submit()" title="Convert the uploaded files to a .zip archive">
                             <span>Zip up</span>
                             <span class="icon is-small">
                                 <i class="fa fa-file-archive-o"></i>
