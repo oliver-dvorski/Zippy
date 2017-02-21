@@ -9,6 +9,8 @@
             <div class="section has-text-centered">
                 <canvas id="qrcode"></canvas>
                 <br>
+                <p>Link to your archive: <a href="{{ url($url) }}">{{ url($url) }}</a></p>
+                <br>
                 <a href="{{ url('/' . $url . '/download') }}" class="button is-medium is-primary"
                     @if ($hasPassword)
                         @click.prevent="showPasswordModal = true"

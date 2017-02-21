@@ -23,7 +23,7 @@
                     {{ csrf_field() }}
 
                     <div class="control password-conrol is-grouped has-addons">
-                        <input type="password" name="password" class="input is-large is-expanded" placeholder="Password">
+                        <input type="password" name="password" class="input is-large is-expanded" placeholder="Password (optional)">
                         
                         {{-- Firefox is a bit wee so we can't use damn buttons with icons, instead we have to use something else like a div --}}
                         <div class="button is-primary is-large" onclick="document.querySelector('#form').submit()">
