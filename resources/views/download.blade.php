@@ -39,6 +39,10 @@
             </div>
         </div>
     </div>
+
+    <notification v-if="showClipboardNotification" @close="showClipboardNotification = false" type="success">
+        URL copied to clipboard
+    </notification>
     
     @if ($hasPassword)
         <password-modal v-show="showPasswordModal" @close="showPasswordModal = false"></password-modal>

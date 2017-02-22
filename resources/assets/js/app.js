@@ -5,12 +5,14 @@ const app = new Vue({
     
     data: {
         showPasswordModal: false,
-        showNotifcation: true
+        showNotifcation: true,
+        showClipboardNotification: false
     },
 
     methods: {
         copy(text) {
             copyToClipboard(text)
+            this.showClipboardNotification = true
         }
     },
 
