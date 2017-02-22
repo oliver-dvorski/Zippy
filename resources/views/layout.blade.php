@@ -82,6 +82,10 @@
 
         @yield('scripts')
 
+        @if (env('SEO'))
+            @include('partials.seo')
+        @endif
+
         <script src="{{ url('/js/app.js') }}"></script>
     </body>
 </html>
