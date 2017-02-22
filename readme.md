@@ -37,3 +37,5 @@ APP_URL=http://localhost:8000
 APP_ID=123456789123456
 GA=UA-12345678-9
 ```
+### SEO
+To do some Basic SEO, there's a conditional seo partial containing some schema.org ld javascript. To set up SEO, add a SEO key to the .env file and set it to true

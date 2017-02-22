@@ -82,7 +82,7 @@
 
         @yield('scripts')
 
-        @if (env('SEO'))
+        @if (env('SEO') !== null)
             @include('partials.seo')
         @endif
 
