@@ -14,9 +14,7 @@ class FileController extends Controller
     public function upload(Request $request) {
         if ($request->hasFile('file')) {
             $filename = time() . ' - ' . $request->file->getClientOriginalName();
-            
             $request->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
-
             return response('WIP', 200);
         }
         return response('Upload failed (is your file too large?)', 500);
@@ -50,7 +48,10 @@ class FileController extends Controller
         }
         $hasPassword = $file->password != '' ? true : false;
         if ($file) {
-            return view('download', compact('url', 'hasPassword'));
+            return view('download', [
+                'fileUrl' => $url,
+                'hasPassword' => $hasPassword
+            ]);
         }
 
         return response()->view('errors.404', [], 404);
