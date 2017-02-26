@@ -3,8 +3,7 @@ window.Dropzone = require('./lib/dropzone')
 
 // Download page dependencies
 window.QRious = require('qrious')
-import copyToClipboard from 'copy-to-clipboard'
-window.copyToClipboard = copyToClipboard
+window.copyToClipboard = require('copy-to-clipboard')
 
 // Global dependencies
 window.Vue = require('vue')

@@ -12,27 +12,26 @@
                     </section>
                     
                     <footer class="modal-card-foot">
-                        <form class="control is-fullwidth has-addons has-addons-centered" method="POST" :action="downloadRoute">
+                        <form class="control is-fullwidth has-addons has-addons-centered" method="POST" :action="downloadRoute + '/download'">
                             <input type="hidden" name="_token" :value="csrf_token">
-                            <input type="password" name="password" placeholder="Password" id="password" class="input is-large" @keyup.enter="checkPassword">
+                            <input type="password" name="password" autofocus placeholder="Password" id="password" class="input is-large" @keyup.enter="checkPassword">
                             <button class="button is-primary is-large" :class="{ 'is-loading': loading }" @click="checkPassword">OK</button>
                         </form>
                     </footer>
                 </div>
             </div>
-            <iframe :src="protectedArchive" style="display: none"></iframe>
         </div>
     </transition>
 </template>
 
 <script>
     export default {
+        props: [ 'downloadRoute' ],
+
         data() {
             return {
                 loading: false,
-                downloadRoute: window.appData.url + '/' + document.getElementById('fileUrl').innerHTML + '/download',
-                csrf_token: window.appData.csrf,
-                protectedArchive: ''
+                csrf_token: window.appData.csrf
             }
         },
 

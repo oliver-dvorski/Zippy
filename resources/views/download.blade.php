@@ -44,7 +44,7 @@
     </notification>
     
     @if ($hasPassword)
-        <password-modal v-show="showPasswordModal" @close="showPasswordModal = false"></password-modal>
+        <password-modal v-show="showPasswordModal" download-route="{{ url($fileUrl) }}" @close="showPasswordModal = false"></password-modal>
     @endif
 
     @if (Session::get('error'))
