@@ -29,7 +29,7 @@
                         <div class="button is-primary is-large" onclick="document.querySelector('#form').submit()" title="Convert the uploaded files to a .zip archive">
                             <span>Zip up</span>
                             <span class="icon is-small">
-                                <i class="fa fa-file-archive-o"></i>
+                                <i class="zip-icon"></i>
                             </span>
                         </div>
                     </div>

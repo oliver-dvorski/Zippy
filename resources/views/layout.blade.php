@@ -50,19 +50,19 @@
                     </p>
                     <p>
                         <a href="https://github.com/Musmula" target="_blank" class="icon">
-                            <i class="fa fa-github"></i>
+                            <i class="github-icon"></i>
                         </a>
 
                         <a href="https://www.facebook.com/oliver.dvorski" target="_blank" class="icon">
-                            <i class="fa fa-facebook"></i>
+                            <i class="facebook-icon"></i>
                         </a>
 
                         <a href="https://twitter.com/Musmula3" target="_blank" class="icon">
-                            <i class="fa fa-twitter"></i>
+                            <i class="twitter-icon"></i>
                         </a>
 
                         <a href="https://plus.google.com/+OliverDvorski" target="_blank" class="icon">
-                            <i class="fa fa-google-plus"></i>
+                            <i class="gplus-icon"></i>
                         </a>
                     </p>
                     <p>
@@ -71,7 +71,7 @@
                     <p>
                         <a href="https://www.paypal.me/OliverDvorski" class="button" target="_blank">
                             <span class="icon is-small">
-                                <i class="fa fa-paypal"></i>
+                                <i class="paypal-icon"></i>
                             </span>
                             <span>PayPal.Me</span>
                         </a>

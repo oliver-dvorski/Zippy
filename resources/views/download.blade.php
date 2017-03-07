@@ -13,7 +13,7 @@
                 <input type="text" disabled class="input is-large has-addons" value="{{ url($fileUrl) }}">
                 <a @click.prevent="copy('{{ url($fileUrl) }}')" class="button is-large" title="Copy to clipboard">
                     <span class="icon">
-                        <i class="fa fa-clipboard"></i>
+                        <i class="clipboard-icon"></i>
                     </span>
                 </a>
             </p>
@@ -25,14 +25,14 @@
                 title="Download archive" 
             >
                 <span class="icon is-small">
-                    <span class="fa fa-download"></span>
+                    <span class="download-icon"></span>
                 </span>
                 <span>Download</span>
             </a>
 
             <a href="{{ url('/') }}" class="button is-medium" title="Upload new files to a new archive">
                 <span class="icon is-small">
-                    <span class="fa fa-upload"></span>
+                    <span class="upload-icon"></span>
                 </span>
                 <span>Upload</span>
             </a>
