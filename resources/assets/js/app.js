@@ -6,7 +6,8 @@ const app = new Vue({
     data: {
         showPasswordModal: false,
         showNotifcation: true,
-        showClipboardNotification: false
+        showClipboardNotification: false,
+        dropzoneProcessing: false
     },
 
     methods: {
@@ -18,6 +19,14 @@ const app = new Vue({
 
     mounted() {
         Dropzone.options.thatZone = {
+            init: function() {
+                this.on('processing', () => {
+                    app.dropzoneProcessing = true
+                })
+                this.on('queuecomplete', () => {
+                    app.dropzoneProcessing = false
+                })
+            },
             paramName: "file",
             maxFilesize: 50, // MB
         }

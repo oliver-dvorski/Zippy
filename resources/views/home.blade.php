@@ -25,7 +25,11 @@
                     <div class="control password-conrol is-grouped has-addons">
                         <input type="password" name="password" class="input is-large is-expanded" placeholder="Password (optional)">
                         
-                        <button class="button is-primary is-large" onclick="document.querySelector('#form').submit()" title="Convert the uploaded files to a .zip archive">
+                        <button class="button is-primary is-large" 
+                                :class="{ 'is-loading' : dropzoneProcessing }" 
+                                onclick="document.querySelector('#form').submit()" 
+                                title="Convert the uploaded files to a .zip archive"
+                                :disabled="dropzoneProcessing">
                             <span>Zip up</span>
                             <span class="icon is-small">
                                 <i class="zip-icon"></i>
