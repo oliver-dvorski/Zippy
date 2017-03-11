@@ -25,13 +25,12 @@
                     <div class="control password-conrol is-grouped has-addons">
                         <input type="password" name="password" class="input is-large is-expanded" placeholder="Password (optional)">
                         
-                        {{-- Firefox is a bit wee so we can't use damn buttons with icons, instead we have to use something else like a div --}}
-                        <div class="button is-primary is-large" onclick="document.querySelector('#form').submit()" title="Convert the uploaded files to a .zip archive">
+                        <button class="button is-primary is-large" onclick="document.querySelector('#form').submit()" title="Convert the uploaded files to a .zip archive">
                             <span>Zip up</span>
                             <span class="icon is-small">
                                 <i class="zip-icon"></i>
                             </span>
-                        </div>
+                        </button>
                     </div>
                 </form>
 
