@@ -14,7 +14,7 @@
         <meta property="og:url" content="{{ url('/') }}">
         <meta property="fb:app_id" content="{{ env('APP_ID') }}">
 
-        <link rel="stylesheet" href="{{ url('/css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
         <title>{{ config('app.name') }}</title>
 
         <meta name="theme-color" content="{{ isset($theme) ? $theme : '#4B83CD' }}">
@@ -86,6 +86,6 @@
             @include('partials.seo')
         @endif
 
-        <script src="{{ url('/js/app.js') }}"></script>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>
