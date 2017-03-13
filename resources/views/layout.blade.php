@@ -53,10 +53,6 @@
                             <i class="github-icon"></i>
                         </a>
 
-                        <a href="https://www.facebook.com/oliver.dvorski" target="_blank" class="icon">
-                            <i class="facebook-icon"></i>
-                        </a>
-
                         <a href="https://twitter.com/Musmula3" target="_blank" class="icon">
                             <i class="twitter-icon"></i>
                         </a>
