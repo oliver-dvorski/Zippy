@@ -12,10 +12,16 @@
                     </section>
                     
                     <footer class="modal-card-foot">
-                        <form class="control is-fullwidth has-addons has-addons-centered" method="POST" :action="downloadRoute + '/download'">
+                        <form method="POST" class="is-fullwidth" :action="downloadRoute + '/download'">
                             <input type="hidden" name="_token" :value="csrf_token">
-                            <input type="password" name="password" autofocus placeholder="Password" id="password" class="input is-large" @keyup.enter="checkPassword">
-                            <button class="button is-primary is-large" :class="{ 'is-loading': loading }" @click="checkPassword">OK</button>
+                            <div class="field has-addons has-addons-centered">
+                                <div class="control">
+                                    <input type="password" name="password" autofocus placeholder="Password" id="password" class="input is-large" @keyup.enter="checkPassword">
+                                </div>
+                                <div class="control">
+                                    <button class="button is-primary is-large" :class="{ 'is-loading': loading }" @click="checkPassword">OK</button>
+                                </div>
+                            </div>
                         </form>
                     </footer>
                 </div>
