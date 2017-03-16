@@ -22,19 +22,22 @@
                 <form action="{{ url('/zip/' . Session::get('hash')) }}" method="POST" id="form">
                     {{ csrf_field() }}
 
-                    <div class="control password-conrol is-grouped has-addons">
-                        <input type="password" name="password" class="input is-large is-expanded" placeholder="Password (optional)">
-                        
-                        <button class="button is-primary is-large" 
-                                :class="{ 'is-loading' : dropzoneProcessing }" 
-                                onclick="document.querySelector('#form').submit()" 
-                                title="Convert the uploaded files to a .zip archive"
-                                :disabled="dropzoneProcessing">
-                            <span>Zip up</span>
-                            <span class="icon is-small">
-                                <i class="zip-icon"></i>
-                            </span>
-                        </button>
+                    <div class="field has-addons password-conrol">
+                        <div class="control is-grouped is-expanded">
+                            <input type="password" name="password" class="input is-large" placeholder="Password (optional)">
+                        </div>
+                            <div class="control">
+                                <button class="button is-primary is-large" 
+                                        :class="{ 'is-loading' : dropzoneProcessing }" 
+                                        onclick="document.querySelector('#form').submit()" 
+                                        title="Convert the uploaded files to a .zip archive"
+                                        :disabled="dropzoneProcessing">
+                                    <span>Zip up</span>
+                                    <span class="icon is-small">
+                                        <i class="zip-icon"></i>
+                                    </span>
+                                </button>
+                            </div>
                     </div>
                 </form>
 
