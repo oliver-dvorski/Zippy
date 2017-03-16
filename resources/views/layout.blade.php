@@ -49,15 +49,15 @@
                         license
                     </p>
                     <p>
-                        <a href="https://github.com/Musmula" target="_blank" class="icon">
+                        <a href="https://github.com/Musmula" target="_blank" class="icon is-medium">
                             <i class="github-icon"></i>
                         </a>
 
-                        <a href="https://twitter.com/Musmula3" target="_blank" class="icon">
+                        <a href="https://twitter.com/Musmula3" target="_blank" class="icon is-medium">
                             <i class="twitter-icon"></i>
                         </a>
 
-                        <a href="https://plus.google.com/+OliverDvorski" target="_blank" class="icon">
+                        <a href="https://plus.google.com/+OliverDvorski" target="_blank" class="icon is-medium">
                             <i class="gplus-icon"></i>
                         </a>
                     </p>
