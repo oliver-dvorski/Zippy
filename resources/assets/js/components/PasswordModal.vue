@@ -1,8 +1,8 @@
 <template>
     <transition name="animate">
         <div class="modal is-active modal-background" @click="$emit('close')">
-            <div class="columns is-mobile">
-                <div class="column is-8 is-offset-2 modal-card" @click.stop>
+            <div class="is-fullwidth">
+                <div class="modal-card" @click.stop>
                     <header class="modal-card-head is-primary">
                         <p class="modal-card-title">Password</p>
                         <button class="delete" @click="$emit('close')"></button>
