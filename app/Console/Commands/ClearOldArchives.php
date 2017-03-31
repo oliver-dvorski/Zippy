@@ -21,7 +21,7 @@ class ClearOldArchives extends Command
      *
      * @var string
      */
-    protected $description = 'Delete archives that are older than a week';
+    protected $description = 'Delete archives that are older than a month';
 
     /**
      * Create a new command instance.
@@ -43,7 +43,7 @@ class ClearOldArchives extends Command
         if (env('APP_ENV') == 'local')
             $archives = Archive::all();
         else
-            $archives = Archive::where('created_at', '<', \Carbon\Carbon::now()->subWeek())->get();
+            $archives = Archive::where('created_at', '<', \Carbon\Carbon::now()->subMonth())->get();
             
         foreach ($archives as $archive) {
             File::delete(storage_path('app/Archives/' . $archive->filename));
