@@ -50,7 +50,8 @@ class FileController extends Controller
         if ($file) {
             return view('download', [
                 'fileUrl' => $url,
-                'hasPassword' => $hasPassword
+                'hasPassword' => $hasPassword,
+                'timeRemaining' => $file->created_at->addMonth()->diffForHumans()
             ]);
         }
 
