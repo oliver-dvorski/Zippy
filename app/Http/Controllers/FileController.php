@@ -15,7 +15,7 @@ class FileController extends Controller
         if ($request->hasFile('file')) {
             $filename = time() . ' - ' . $request->file->getClientOriginalName();
             $request->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
-            return response('WIP', 200);
+            return response('Success', 200);
         }
         return response('Upload failed (is your file too large?)', 500);
     }
