@@ -17,18 +17,18 @@ class FileController extends Controller
             $request->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
             return response('Success', 200);
         }
-        return response('Upload failed (is your file too large?)', 500);
+        return response($request->all(), 500);
     }
 
     public function zip($hash, Request $request) {
         $files = storage_path('app/Uploaded_Files/' . $hash);
-        
+
         if (File::exists($files)) {
             Zipper::make(storage_path('app') . '/Archives/' . $hash . '.zip')->add($files)->close();
             File::deleteDirectory($files);
             $url = $this->generateUrl();
             $password = $request->password == '' ? '' : bcrypt($request->password);
-            
+
             Archive::create([
                 'url' => $url,
                 'filename' => $hash . '.zip',

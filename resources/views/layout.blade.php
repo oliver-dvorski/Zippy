@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="content has-text-centered">
                     <p>
-                        &copy; {{ date('Y') }} <a href="https://dvorski.tech" target="_blank">Oliver Dvorski</a>. Puzzled? Try the <a href="{{ url('/about') }}">About</a> section.
+                        &copy; 2016 - {{ date('Y') }} Oliver Dvorski. Puzzled? Try the <a href="{{ url('/about') }}">About</a> section.
                     </p>
                     <p>
                         Released under the
@@ -49,7 +49,7 @@
                         license
                     </p>
                     <p>
-                        <a href="https://github.com/Musmula" target="_blank" class="icon is-medium">
+                        <a href="https://github.com/oliver-dvorski" target="_blank" class="icon is-medium">
                             <i class="github-icon"></i>
                         </a>
 
