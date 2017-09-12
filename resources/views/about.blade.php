@@ -1,10 +1,7 @@
 @extends('layout')
 
 @section('content')
-    @component('partials.header')
-        @slot('theme')
-            is-dark
-        @endslot
+    @component('partials.header', ['theme' => 'is-dark'])
         @slot('subtitle')
             About section
         @endslot
