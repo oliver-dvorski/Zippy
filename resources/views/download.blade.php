@@ -8,13 +8,13 @@
             <h2 class="title">Your archive is ready!</h2>
             <h3 class="subtitle">And it will be deleted {{ $timeRemaining }}</h3>
         </div>
-        
+
         <br>
 
         <div class="container column is-4 is-offset-4 has-text-centered">
-                
+
             <qr url="{{ url($fileUrl) }}"></qr>
-    
+
             <div class="field has-addons">
                 <div class="control is-expanded">
                     <input type="text" disabled class="input is-fullwidth is-large" value="{{ url($fileUrl) }}">
@@ -33,7 +33,7 @@
                         @if ($hasPassword)
                         @click.prevent="showPasswordModal = true"
                         @endif
-                        title="Download archive" 
+                        title="Download archive"
                     >
                         <span class="icon is-small">
                             <span class="download-icon"></span>
@@ -41,23 +41,23 @@
                         <span class="is-hidden-mobile">Download</span>
                     </a>
                 </div>
-            
+
                 <div class="control is-expanded">
                     <a href="{{ url('/') }}" class="control is-fullwidth button is-medium" title="Upload new files to a new archive">
                         <span class="icon is-small">
                             <span class="upload-icon"></span>
                         </span>
-                        <span class="is-hidden-mobile">Upload</span>
+                        <span class="is-hidden-mobile">New upload</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <notification v-if="showClipboardNotification" @close="showClipboardNotification = false" type="success">
+    <notification v-show="showClipboardNotification" @close="showClipboardNotification = false" type="success">
         URL copied to clipboard
     </notification>
-    
+
     @if ($hasPassword)
         <password-modal v-show="showPasswordModal" download-route="{{ url($fileUrl) }}" @close="showPasswordModal = false"></password-modal>
     @endif
