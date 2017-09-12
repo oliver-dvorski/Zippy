@@ -54,6 +54,8 @@
         </div>
     </section>
 
+    @include('partials.clipboardNotification')
+
     @if ($hasPassword)
         <password-modal v-show="showPasswordModal" download-route="{{ url($fileUrl) }}" @close="showPasswordModal = false"></password-modal>
     @endif
