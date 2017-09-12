@@ -166,7 +166,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Laravel\Tinker\TinkerServiceProvider::class,
         Chumper\Zipper\ZipperServiceProvider::class,
         GrahamCampbell\Markdown\MarkdownServiceProvider::class,
 
