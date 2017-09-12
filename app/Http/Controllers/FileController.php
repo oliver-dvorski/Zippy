@@ -11,7 +11,8 @@ use Illuminate\Http\Request;
 
 class FileController extends Controller
 {
-    public function upload(Request $request) {
+    public function upload(Request $request)
+    {
         if ($request->hasFile('file')) {
             $filename = time() . ' - ' . $request->file->getClientOriginalName();
             $request->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
@@ -20,7 +21,8 @@ class FileController extends Controller
         return response($request->all(), 500);
     }
 
-    public function zip($hash, Request $request) {
+    public function zip($hash, Request $request)
+    {
         $files = storage_path('app/Uploaded_Files/' . $hash);
 
         if (File::exists($files)) {
@@ -41,7 +43,8 @@ class FileController extends Controller
         return redirect('/');
     }
 
-    public function downloadPage($url) {
+    public function downloadPage($url)
+    {
         $file = Archive::where('url', $url)->first();
         if (!$file) {
             return view("errors.404");
@@ -58,7 +61,8 @@ class FileController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
-    public function download($url, Request $request) {
+    public function download($url, Request $request)
+    {
         $file = Archive::where('url', $url)->firstOrFail();
         if ($file->password == '' || Hash::check($request->password, $file->password)) {
             return response()->download(storage_path('app/Archives/' . $file->filename));
@@ -67,7 +71,8 @@ class FileController extends Controller
         return redirect()->back()->with('error', 'Invalid password');
     }
 
-    protected function generateUrl($count = 4) {
+    protected function generateUrl($count = 4)
+    {
         $url = str_random($count);
         if (Archive::where('url', $url)->first()) {
             $this->generateUrl($count++);

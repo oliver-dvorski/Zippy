@@ -40,10 +40,11 @@ class ClearOldArchives extends Command
      */
     public function handle()
     {
-        if (env('APP_ENV') == 'local')
+        if (env('APP_ENV') == 'local') {
             $archives = Archive::all();
-        else
+        } else {
             $archives = Archive::where('created_at', '<', \Carbon\Carbon::now()->subMonth())->get();
+        }
             
         foreach ($archives as $archive) {
             File::delete(storage_path('app/Archives/' . $archive->filename));
