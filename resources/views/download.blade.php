@@ -22,7 +22,7 @@
                 <div class="control">
                     <a @click.prevent="copy('{{ url($fileUrl) }}')" class="button is-large" title="Copy to clipboard">
                         <span class="icon">
-                            <i class="clipboard-icon"></i>
+                            <i class="icon-clipboard"></i>
                         </span>
                     </a>
                 </div>
@@ -36,7 +36,7 @@
                         title="Download archive"
                     >
                         <span class="icon is-small">
-                            <span class="download-icon"></span>
+                            <span class="icon-download"></span>
                         </span>
                         <span class="is-hidden-mobile">Download</span>
                     </a>
@@ -45,7 +45,7 @@
                 <div class="control is-expanded">
                     <a href="{{ url('/') }}" class="control is-fullwidth button is-medium" title="Upload new files to a new archive">
                         <span class="icon is-small">
-                            <span class="upload-icon"></span>
+                            <span class="icon-upload"></span>
                         </span>
                         <span class="is-hidden-mobile">New upload</span>
                     </a>

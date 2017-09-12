@@ -47,15 +47,15 @@
                     </p>
                     <p>
                         <a href="https://github.com/oliver-dvorski" target="_blank" class="icon is-medium">
-                            <i class="github-icon"></i>
+                            <i class="icon-github"></i>
                         </a>
 
                         <a href="https://twitter.com/oliverdvorski" target="_blank" class="icon is-medium">
-                            <i class="twitter-icon"></i>
+                            <i class="icon-twitter"></i>
                         </a>
 
                         <a href="https://plus.google.com/+OliverDvorski" target="_blank" class="icon is-medium">
-                            <i class="gplus-icon"></i>
+                            <i class="icon-gplus"></i>
                         </a>
                     </p>
                     <p>
@@ -64,7 +64,7 @@
                     <p>
                         <a href="https://www.paypal.me/OliverDvorski" class="button" target="_blank">
                             <span class="icon is-small">
-                                <i class="paypal-icon"></i>
+                                <i class="icon-paypal"></i>
                             </span>
                             <span>PayPal.Me</span>
                         </a>
