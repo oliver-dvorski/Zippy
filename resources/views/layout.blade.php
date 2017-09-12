@@ -35,6 +35,10 @@
 
         <div class="page-content" id="app">
             @yield('content')
+
+            <notification v-show="showClipboardNotification" @close="showClipboardNotification = false" type="success">
+                Copied to clipboard
+            </notification>
         </div>
 
         <footer class="footer">

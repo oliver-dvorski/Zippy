@@ -11158,7 +11158,7 @@ label.panel-block:hover {
   width: 100%;
 }
 
-.control.has-addons.has-flex-centered {
+.field.has-addons.has-flex-centered {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
