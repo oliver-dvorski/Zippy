@@ -1,6 +1,6 @@
 <template>
 
-    <transition name="animate">
+    <transition name="notification-animation">
         <div class="notification" :class="'is-' + type">
             <button class="delete" @click="$emit('close')"></button>
             <slot></slot>
