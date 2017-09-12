@@ -11247,6 +11247,8 @@ input {
   white-space: nowrap;
   overflow: hidden;
   max-width: calc(100% - 40px);
+  -webkit-transition: .3s transform;
+  transition: .3s transform;
 }
 
 .notification.is-info a {

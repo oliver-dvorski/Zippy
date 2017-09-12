@@ -35,4 +35,6 @@
         </div>
     </section>
 
+    @include('partials.clipboardNotification')
+
 @stop
