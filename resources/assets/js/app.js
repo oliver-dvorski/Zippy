@@ -2,7 +2,7 @@ require('./bootstrap')
 
 const app = new Vue({
     el: '#app',
-    
+
     data: {
         showPasswordModal: false,
         showNotifcation: true,
@@ -13,6 +13,10 @@ const app = new Vue({
     methods: {
         copy(text) {
             copyToClipboard(text)
+            this.showClipboardNotification = true
+        },
+        copyFromId(id) {
+            copyToClipboard(document.getElementById(id).innerHTML)
             this.showClipboardNotification = true
         }
     },

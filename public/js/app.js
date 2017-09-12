@@ -188,6 +188,10 @@ var app = new Vue({
         copy: function copy(text) {
             copyToClipboard(text);
             this.showClipboardNotification = true;
+        },
+        copyFromId: function copyFromId(id) {
+            copyToClipboard(document.getElementById(id).innerHTML);
+            this.showClipboardNotification = true;
         }
     },
 

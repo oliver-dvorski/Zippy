@@ -27,7 +27,7 @@
                     @if ($errors->has('note'))
                         <label class="help is-danger">{{ $errors->first('note') }}</label>
                     @endif
-                    <textarea placeholder="Note..." name="note" rows="8" class="textarea box"></textarea>
+                    <textarea placeholder="Note..." name="content" rows="8" class="textarea box"></textarea>
                     @component('components.uploadTrigger', ['label' => 'Share', 'icon' => 'export'])@endcomponent
                 </form>
             </div>
