@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Hash;
 use App\Note;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,18 @@ class NoteController extends Controller
 
     public function show(Note $note)
     {
-        return view("note.show", compact('note'));
+        if ($note->password === null) {
+            return view("note.show", compact('note'));
+        }
+        return view("note.passwordForm", compact('note'));
+    }
+
+    public function checkPassword(Note $note)
+    {
+        if (Hash::check(request()->password, $note->password)) {
+            return view("note.show", compact('note'));
+        }
+        return redirect()->back();
     }
 
     public function generateNoteId($characters)
