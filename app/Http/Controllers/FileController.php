@@ -14,11 +14,14 @@ class FileController extends Controller
     public function upload(Request $request)
     {
         if ($request->hasFile('file')) {
-            $filename = time() . ' - ' . $request->file->getClientOriginalName();
+            $filename = request()->file->getClientOriginalName();
+            if (request()->filePath !== 'undefined') {
+                $filename = request()->filePath;
+            }
             $request->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
             return response('Success', 200);
         }
-        return response($request->all(), 500);
+        return response('Upload error', 500);
     }
 
     public function zip($hash, Request $request)
