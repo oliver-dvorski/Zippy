@@ -24,6 +24,7 @@
                 </div>
                 <div class="box">
                     <form action="/upload" class="dropzone" id="that-zone">
+                        <input type="hidden" name="filePath" id="filePath">
                         <div class="dz-message needsclick">
                             <h2>Drop files here or click to upload</h2>
                             <br>
@@ -40,6 +41,8 @@
 
                     @component('components.uploadTrigger', ['label' => 'Zip up', 'icon' => 'zip'])@endcomponent
                 </form>
+
+                <label class="help">Note: you can upload folders using drag and drop on your desktop devices</label>
 
             </div>
         </div>

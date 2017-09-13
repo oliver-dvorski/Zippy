@@ -30,6 +30,9 @@ const app = new Vue({
                 this.on('queuecomplete', () => {
                     app.dropzoneProcessing = false
                 })
+                this.on('sending', file => {
+                    document.getElementById('filePath').value = file.fullPath
+                })
             },
             paramName: "file",
             maxFilesize: 50, // MB
