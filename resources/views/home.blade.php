@@ -6,22 +6,6 @@
     <section class="section home">
         <div class="container">
             <div class="column is-half is-offset-one-quarter">
-                <div class="tabs">
-                    <ul>
-                        <li class="is-active">
-                            <a>
-                                <span class="icon is-small"><i class="icon-doc"></i></span>
-                                <span>Upload files</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{ route('note') }}">
-                                <span class="icon is-small"><i class="icon-doc-text"></i></span>
-                                <span>Transfer text note</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
                 <div class="box">
                     <form action="/upload" class="dropzone" id="that-zone">
                         <input type="hidden" name="filePath" id="filePath">
