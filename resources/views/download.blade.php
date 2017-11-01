@@ -6,7 +6,7 @@
     <section class="section">
         <div class="has-text-centered">
             <h2 class="title">Your archive is ready!</h2>
-            <h3 class="subtitle">And it will be deleted {{ $timeRemaining }}</h3>
+            <h3 class="subtitle">It will be deleted {{ $timeRemaining }}</h3>
         </div>
 
         <br>

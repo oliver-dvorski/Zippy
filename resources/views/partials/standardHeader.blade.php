@@ -3,6 +3,6 @@
         is-primary
     @endslot
     @slot('subtitle')
-        Anonymous file sharing simplified
+        Quick file sharing. Secure and and anonymous
     @endslot
 @endcomponent
