@@ -11,28 +11,32 @@ use Illuminate\Http\Request;
 
 class FileController extends Controller
 {
-    public function upload(Request $request)
+    public function upload()
     {
-        if ($request->hasFile('file')) {
+        if (request()->hasFile('file')) {
             $filename = request()->file->getClientOriginalName();
             if (request()->filePath !== 'undefined') {
                 $filename = request()->filePath;
             }
-            $request->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
+            request()->file->storeAs('Uploaded_Files/' . Session::get('hash') . '/', $filename);
             return response('Success', 200);
         }
         return response('Upload error', 500);
     }
 
-    public function zip($hash, Request $request)
+    public function zip($hash)
     {
         $files = storage_path('app/Uploaded_Files/' . $hash);
+
+        if (count($files) == 1) {
+            $file = $files;
+        }
 
         if (File::exists($files)) {
             Zipper::make(storage_path('app') . '/Archives/' . $hash . '.zip')->add($files)->close();
             File::deleteDirectory($files);
             $url = $this->generateUrl();
-            $password = $request->password == '' ? '' : bcrypt($request->password);
+            $password = request()->password == '' ? '' : bcrypt(request()->password);
 
             Archive::create([
                 'url' => $url,
@@ -64,10 +68,10 @@ class FileController extends Controller
         return response()->view('errors.404', [], 404);
     }
 
-    public function download($url, Request $request)
+    public function download($url)
     {
         $file = Archive::where('url', $url)->firstOrFail();
-        if ($file->password == '' || Hash::check($request->password, $file->password)) {
+        if ($file->password == '' || Hash::check(request()->password, $file->password)) {
             return response()->download(storage_path('app/Archives/' . $file->filename));
         }
 
