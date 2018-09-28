@@ -10,9 +10,9 @@
             new QRious({
                 element: document.getElementById('qrcode'),
                 value: this.url,
-                size: 240,
+                size: 300
             })
-            
+
         }
     }
 </script>

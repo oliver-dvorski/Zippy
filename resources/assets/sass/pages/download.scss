@@ -1,0 +1,35 @@
+.download {
+    .grid {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 750px;
+        display: grid;
+        grid-template-columns: 1fr minmax(100px, auto);
+        grid-gap: 2rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr minmax(auto, 200px);
+
+        }
+
+        @media (max-width: 580px) {
+            grid-template-columns: 1fr;
+            aside {
+                display: flex;
+                justify-content: center;
+            }
+        }
+
+        aside {
+            display: flex;
+            align-items: flex-end;
+        }
+        .info {
+            display: grid;
+            align-items: start;
+            .fields {
+                align-self: end;
+            }
+        }
+    }
+}

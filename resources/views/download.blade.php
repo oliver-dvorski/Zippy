@@ -3,55 +3,60 @@
 @section('content')
     @include('partials.standardHeader')
 
-    <section class="section">
-        <div class="has-text-centered">
-            <h2 class="title">Your archive is ready!</h2>
-            <h3 class="subtitle">It will be deleted {{ $timeRemaining }}</h3>
-        </div>
+    <section class="download section">
+        <main class="grid">
+            <section class="info">
+                <main>
+                    <h2 class="title">Your archive is ready!</h2>
+                    <h3 class="subtitle">It will be deleted {{ $timeRemaining }}</h3>
+                </main>
 
-        <br>
+                <section class="fields">
+                    <p>Here's the link to this download page:</p>
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <input type="text" disabled class="input is-fullwidth is-large" value="{{ url($fileUrl) }}">
+                        </div>
+                        <div class="control">
+                            <a @click.prevent="copy('{{ url($fileUrl) }}')" class="button is-large" title="Copy to clipboard">
+                                <span class="icon">
+                                    <i class="icon-clipboard"></i>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
 
-        <div class="container column is-4 is-offset-4 has-text-centered">
+                    <div class="field has-addons">
+                        <div class="control is-expanded">
+                            <a  href="{{ url('/' . $fileUrl . '/download') }}" class="is-fullwidth button is-medium is-primary"
+                                @if ($hasPassword)
+                                @click.prevent="showPasswordModal = true"
+                                @endif
+                                title="Download archive"
+                            >
+                                <span class="icon is-small">
+                                    <span class="icon-download"></span>
+                                </span>
+                                <span class="is-hidden-mobile">Download</span>
+                            </a>
+                        </div>
 
-            <qr url="{{ url($fileUrl) }}"></qr>
+                        <div class="control is-expanded">
+                            <a href="{{ url('/') }}" class="control is-fullwidth button is-medium" title="Upload new files to a new archive">
+                                <span class="icon is-small">
+                                    <span class="icon-upload"></span>
+                                </span>
+                                <span class="is-hidden-mobile">New upload</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
 
-            <div class="field has-addons">
-                <div class="control is-expanded">
-                    <input type="text" disabled class="input is-fullwidth is-large" value="{{ url($fileUrl) }}">
-                </div>
-                <div class="control">
-                    <a @click.prevent="copy('{{ url($fileUrl) }}')" class="button is-large" title="Copy to clipboard">
-                        <span class="icon">
-                            <i class="icon-clipboard"></i>
-                        </span>
-                    </a>
-                </div>
-            </div>
-            <div class="field has-addons">
-                <div class="control is-expanded">
-                    <a  href="{{ url('/' . $fileUrl . '/download') }}" class="is-fullwidth button is-medium is-primary"
-                        @if ($hasPassword)
-                        @click.prevent="showPasswordModal = true"
-                        @endif
-                        title="Download archive"
-                    >
-                        <span class="icon is-small">
-                            <span class="icon-download"></span>
-                        </span>
-                        <span class="is-hidden-mobile">Download</span>
-                    </a>
-                </div>
-
-                <div class="control is-expanded">
-                    <a href="{{ url('/') }}" class="control is-fullwidth button is-medium" title="Upload new files to a new archive">
-                        <span class="icon is-small">
-                            <span class="icon-upload"></span>
-                        </span>
-                        <span class="is-hidden-mobile">New upload</span>
-                    </a>
-                </div>
-            </div>
-        </div>
+            </section>
+            <aside>
+                <qr url="{{ url($fileUrl) }}"></qr>
+            </aside>
+        </main>
     </section>
 
     @include('partials.clipboardNotification')

@@ -26,15 +26,11 @@ class FileController extends Controller
 
     public function zip($hash)
     {
-        $files = storage_path('app/Uploaded_Files/' . $hash);
+        $folder = storage_path('app/Uploaded_Files/' . $hash);
 
-        if (count($files) == 1) {
-            $file = $files;
-        }
-
-        if (File::exists($files)) {
-            Zipper::make(storage_path('app') . '/Archives/' . $hash . '.zip')->add($files)->close();
-            File::deleteDirectory($files);
+        if (File::exists($folder)) {
+            Zipper::make(storage_path('app') . '/Archives/' . $hash . '.zip')->add($folder)->close();
+            File::deleteDirectory($folder);
             $url = $this->generateUrl();
             $password = request()->password == '' ? '' : bcrypt(request()->password);
 
