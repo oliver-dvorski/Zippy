@@ -6,21 +6,23 @@ I created Zippy because it solves a specific problem I had in school. The comput
 ## Development
 Zippy is on GitHub and I’m open to suggestions and pull requests. Don’t be shy if you have an idea or even better: the execution of your idea in a fork.
 ### Installation
-Once you've cloned the repo and installed [Laravel](https://www.laravel.com/docs), run
+Once you've cloned the repo, run
 ```bash
 composer install
 npm install
+cp .env.example .env
 ```
-You'll also need to configure your database and input the credentials into the .env file (just a reminder that the .env.example file is here for reference). Once you've got that covered, you just run
-```
+You'll also need to configure your database and input the credentials into the .env file. Once you've got that covered, you just run
+```bash
 php artisan key:generate
 php artisan migrate
+php artisan storage:link
 php artisan serve
 ```
 And you should have a running instance of Zippy at localhost:8000
 ### House cleaning artisan commands
 Zippy includes 3 custom commands. One for deleting old archives and db records, one for clearing the uploads folder and one that wrapps the other two together and calls them between maintenance toggles.
-```
+```bash
 php artisan clear:archives
 php artisan clear:uploads
 php artisan clear:all
