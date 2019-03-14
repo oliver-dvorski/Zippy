@@ -3,4 +3,4 @@
 Zippy is a file sharing platform designed to transfer files from one computer to another without the transfer of any sensitive information such as usernames and passwords.
 
 # 2019 Update
-So the nice people at Mozilla just realeased <a href="https://send.firefox.com/">Send</a> at the time of this writing. Which is a way better app than Zippy in soooo many ways. It does lack a few of Zippies features tho so I'm not throwing the project away just yet but hopefully Send will support the handy instant QR code render feature and folder uploads soon.
+So the nice people at Mozilla just realeased [Send](https://send.firefox.com/). Which is a way better app than Zippy in soooo many ways. It does lack a few of Zippies features tho so I'm not throwing the project away just yet but hopefully Send will support the handy instant QR code render feature and folder uploads soon.
