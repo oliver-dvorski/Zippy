@@ -13,7 +13,7 @@
                             <h2>Drop files here or click to upload</h2>
                             <br>
                             <span class="note needsclick">
-                                Max: 50Mb/file
+                                Max: 5GB/file
                             </span>
                         </div>
                         {{ csrf_field() }}
