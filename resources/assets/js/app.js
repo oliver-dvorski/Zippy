@@ -35,7 +35,7 @@ const app = new Vue({
                 })
             },
             paramName: "file",
-            maxFilesize: 50, // MB
+            maxFilesize: 5120, // MB
         }
     }
 })
