@@ -57,9 +57,7 @@
 <body>
     <div class="flex">
         <h1>Error: 404</h1>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Sagg08DrO5U" frameborder="0" allowfullscreen></iframe>
-        <hr>
-        <p>Enjoy the music and try reloading the page once the video ends</p>
+        <p>Archive not found. Sorry.</p>
     </div>
 </body>
 </html>

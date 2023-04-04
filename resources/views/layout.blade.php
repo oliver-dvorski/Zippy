@@ -42,7 +42,7 @@
                 <div class="content has-text-centered">
                     <p>
                         &copy; 2016 - {{ date('Y') }} Oliver Dvorski. <br>
-                        Puzzled? Try the <a href="{{ url('/about') }}">About</a> section. <br>
+                        <a href="{{ url('/about') }}">About</a><br>
                         Released under the <a href="https://opensource.org/licenses/mit-license.php" target="_blank">MIT</a> license
                     </p>
                     <p>
@@ -52,21 +52,6 @@
 
                         <a href="https://twitter.com/oliverdvorski" target="_blank" class="icon is-medium">
                             <i class="icon-twitter"></i>
-                        </a>
-
-                        <a href="https://plus.google.com/+OliverDvorski" target="_blank" class="icon is-medium">
-                            <i class="icon-gplus"></i>
-                        </a>
-                    </p>
-                    <p>
-                        Wanna buy the dev a cuppa coffee?
-                    </p>
-                    <p>
-                        <a href="https://www.paypal.me/OliverDvorski" class="button" target="_blank">
-                            <span class="icon is-small">
-                                <i class="icon-paypal"></i>
-                            </span>
-                            <span>PayPal.Me</span>
                         </a>
                     </p>
                 </div>
