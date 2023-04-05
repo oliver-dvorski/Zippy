@@ -41,12 +41,10 @@
             <div class="container">
                 <div class="content has-text-centered">
                     <p>
-                        &copy; 2016 - {{ date('Y') }} Oliver Dvorski. <br>
-                        <a href="{{ url('/about') }}">About</a><br>
-                        Released under the <a href="https://opensource.org/licenses/mit-license.php" target="_blank">MIT</a> license
+                        &copy; 2016 - {{ date('Y') }} Oliver Dvorski
                     </p>
                     <p>
-                        <a href="https://github.com/oliver-dvorski" target="_blank" class="icon is-medium">
+                        <a href="https://github.com/oliver-dvorski/Zippy" target="_blank" class="icon is-medium">
                             <i class="icon-github"></i>
                         </a>
 

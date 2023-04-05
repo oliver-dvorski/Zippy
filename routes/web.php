@@ -1,12 +1,16 @@
 <?php
 
-Route::get('/', 'PageController@home');
-Route::get('/about', 'PageController@about');
+use App\Http\Controllers\FileController;
 
-Route::get('/{url}', 'FileController@downloadPage');
-Route::get('/{url}/download', 'FileController@download');
-Route::post('/{url}/download', 'FileController@download');
+Route::get('/', function () {
+    Session::put('hash', Str::random(20));
+    return view('home');
+});
 
-Route::post('/zip/{hash}', 'FileController@zip');
+Route::get('/{url}', [FileController::class, 'downloadPage']);
+Route::get('/{url}/download', [FileController::class, 'download']);
+Route::post('/{url}/download', [FileController::class, 'download']);
 
-Route::post('/upload', 'FileController@upload');
+Route::post('/zip/{hash}', [FileController::class, 'zip']);
+
+Route::post('/upload', [FileController::class, 'upload']);

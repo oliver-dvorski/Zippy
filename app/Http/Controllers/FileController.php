@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Str;
 use File;
 use Hash;
-use Zipper;
+use Madzipper as Zipper;
 use Session;
-use App\Archive;
-use Illuminate\Http\Request;
+use App\Models\Archive;
 
 class FileController extends Controller
 {
@@ -76,7 +76,7 @@ class FileController extends Controller
 
     protected function generateUrl($count = 4)
     {
-        $url = str_random($count);
+        $url = Str::random($count);
         if (Archive::where('url', $url)->first()) {
             $this->generateUrl($count++);
         }
