@@ -4,7 +4,7 @@ namespace App\Console\Commands;
 
 use File;
 use Artisan;
-use App\Archive;
+use App\Models\Archive;
 use Illuminate\Console\Command;
 
 class ClearOldArchives extends Command
