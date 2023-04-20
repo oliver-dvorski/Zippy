@@ -15,7 +15,7 @@
         <meta property="fb:app_id" content="{{ env('APP_ID') }}">
 
         <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-        <title>{{ config('app.name') }}</title>
+        <title>Zippy</title>
 
         <meta name="theme-color" content="{{ isset($theme) ? $theme : '#4B83CD' }}">
 

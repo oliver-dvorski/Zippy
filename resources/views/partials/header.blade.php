@@ -8,7 +8,7 @@
                 <div class="column">
                     <h1 class="title">
                         <a href="{{ url('/') }}">
-                            {{ $title = config('app.name') }}
+                            Zippy
                         </a>
                     </h1>
                     <h2 class="subtitle">
