@@ -41,7 +41,7 @@
             <div class="container">
                 <div class="content has-text-centered">
                     <p>
-                        &copy; 2016 - {{ date('Y') }} <a href="https://oliverdvorski.com" target="_blank">Oliver Dvorski</a>
+                        &copy; 2016 - {{ date('Y') }} <a href="https://oliverdvorski.com?source=Zippy" target="_blank">Oliver Dvorski</a>
                     </p>
                     <p>
                         <a href="https://github.com/oliver-dvorski/Zippy" target="_blank" class="icon is-medium">
